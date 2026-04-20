@@ -42,12 +42,12 @@
             z-index: 20;
         }
 
-        /* Logo styling */
+        /* LOGO FIX — Auto-invert for dark logos */
         header img {
             height: 55px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+            filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(0,0,0,0.4));
         }
 
         @media (max-width: 600px) {
@@ -433,4 +433,5 @@
 function switchLang() {
     const en = document.querySelectorAll('.en');
     const he = document.querySelectorAll('.he');
-    en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block'
+    en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+    he.forEach(el => el.style.display = (el.style.display === 'none' ? '
