@@ -42,12 +42,12 @@
             z-index: 20;
         }
 
-        /* LOGO FIX — Option A (invert + brightness + white outline) */
+        /* LOGO FIX — Option C (glow + brightness) */
         header img {
             height: 55px;
             width: auto;
             object-fit: contain;
-            filter: brightness(2) invert(1) drop-shadow(0 0 6px rgba(255,255,255,0.8));
+            filter: brightness(1.4) drop-shadow(0 0 8px rgba(255,255,255,0.9));
         }
 
         @media (max-width: 600px) {
@@ -434,4 +434,4 @@ function switchLang() {
     const en = document.querySelectorAll('.en');
     const he = document.querySelectorAll('.he');
     en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
-    he.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+    he.forEach(el => el.style.display = (el.style.display
