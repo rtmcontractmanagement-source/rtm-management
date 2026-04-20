@@ -12,18 +12,24 @@
             scroll-behavior: smooth;
         }
 
+        /* PREMIUM BACKGROUND — Teal Gradient Mesh */
         body {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(27,175,191,0.25), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(6,42,46,0.35), transparent 60%),
-        #0A1F22;
-    background-attachment: fixed;
-}
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(27,175,191,0.25), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(6,42,46,0.35), transparent 60%),
+                #0A1F22;
+            background-attachment: fixed;
+            color: #EAF6F7;
+            overflow-x: hidden;
+        }
 
-
+        /* Fade-in animation */
         .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1.2s ease forwards; }
         @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
+        /* Header */
         header {
             background: #062A2E;
             color: white;
@@ -39,6 +45,7 @@
         nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
         .lang-switch { margin-left: 20px; cursor: pointer; font-weight: 600; }
 
+        /* HERO */
         .hero {
             padding: 160px 40px;
             text-align: center;
@@ -61,6 +68,7 @@
             margin-top: 20px;
         }
 
+        /* Sections */
         section {
             background: #0E3A40;
             padding: 80px 40px;
@@ -89,6 +97,7 @@
             background: #1BAFBF;
         }
 
+        /* Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -119,9 +128,7 @@
             transition: 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         .whatsapp-float img {
             width: 35px;
@@ -193,6 +200,7 @@
     <a href="#contact" class="btn he" style="display:none;">צור קשר</a>
 </section>
 
+<!-- ABOUT SECTION (Updated Combined Version) -->
 <section id="about" class="fade-in">
     <h3 class="en">About RTM</h3>
     <h3 class="he" style="display:none;">אודות RTM</h3>
@@ -230,7 +238,7 @@
     </p>
 </section>
 
-
+<!-- SERVICES SECTION (Fully Translated) -->
 <section id="services" class="fade-in">
     <h3 class="en">Our Services</h3>
     <h3 class="he" style="display:none;">השירותים שלנו</h3>
@@ -272,7 +280,7 @@
     </div>
 </section>
 
-
+<!-- CONTACT -->
 <section id="contact" class="fade-in">
     <h3 class="en">Contact</h3>
 
