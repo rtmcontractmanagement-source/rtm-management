@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #F7F7F7;
+            background: #E9ECEF; /* Softer global background */
             color: #0A1A2F;
             direction: ltr;
             overflow-x: hidden;
@@ -92,12 +92,19 @@
             background: #15939f;
         }
 
-        /* BASIC SECTION STYLING (NO nth-of-type) */
+        /* SECTION COLORS — NEW */
         section {
             padding: 80px 40px;
             max-width: 1100px;
             margin: auto;
-            background: #ffffff;
+            background: #F5F7FA; /* Soft light grey-blue */
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        section:nth-of-type(even):not(.hero) {
+            background: #EEF1F4; /* Slightly darker grey-blue */
         }
 
         h3 {
@@ -124,6 +131,12 @@
         .service-box:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+        }
+
+        /* CONTACT TEXT FIX */
+        .contact-box p,
+        .contact-box strong {
+            color: #0A1A2F;
         }
 
         /* FOOTER */
