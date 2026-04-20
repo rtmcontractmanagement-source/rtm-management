@@ -45,7 +45,7 @@
         nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
         .lang-switch { margin-left: 20px; cursor: pointer; font-weight: 600; }
 
-        /* HERO */
+        /* HERO + subtle animation */
         .hero {
             padding: 160px 40px;
             text-align: center;
@@ -53,6 +53,17 @@
             background:
                 linear-gradient(to bottom right, rgba(6, 42, 46, 0.85), rgba(27, 175, 191, 0.35)),
                 url('hero-bg.jpg') center/cover no-repeat;
+            animation: heroFade 1.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            background-attachment: fixed;
+        }
+
+        @keyframes heroFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h2 { font-family: 'Montserrat', sans-serif; font-size: 46px; margin-bottom: 10px; }
@@ -135,6 +146,37 @@
             height: 35px;
         }
 
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #1BAFBF;
+            color: white;
+            font-size: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTop:hover {
+            transform: scale(1.1);
+        }
+
         /* Premium Footer */
         footer {
             background: #062A2E;
@@ -179,17 +221,19 @@
     <nav>
         <a href="#about" class="en">About</a>
         <a href="#services" class="en">Services</a>
+        <a href="#why" class="en">Why Us</a>
         <a href="#contact" class="en">Contact</a>
 
         <a href="#about" class="he" style="display:none;">אודות</a>
         <a href="#services" class="he" style="display:none;">שירותים</a>
+        <a href="#why" class="he" style="display:none;">למה אנחנו</a>
         <a href="#contact" class="he" style="display:none;">צור קשר</a>
 
         <span class="lang-switch" onclick="switchLang()">EN | HE</span>
     </nav>
 </header>
 
-<section class="hero fade-in">
+<section class="hero">
     <h2 class="en">Contract & Claim Management</h2>
     <h2 class="he" style="display:none;">ניהול חוזים ותביעות</h2>
 
@@ -200,7 +244,7 @@
     <a href="#contact" class="btn he" style="display:none;">צור קשר</a>
 </section>
 
-<!-- ABOUT SECTION (Updated Combined Version) -->
+<!-- ABOUT SECTION -->
 <section id="about" class="fade-in">
     <h3 class="en">About RTM</h3>
     <h3 class="he" style="display:none;">אודות RTM</h3>
@@ -238,7 +282,7 @@
     </p>
 </section>
 
-<!-- SERVICES SECTION (Fully Translated) -->
+<!-- SERVICES SECTION -->
 <section id="services" class="fade-in">
     <h3 class="en">Our Services</h3>
     <h3 class="he" style="display:none;">השירותים שלנו</h3>
@@ -280,9 +324,52 @@
     </div>
 </section>
 
+<!-- WHY CHOOSE US SECTION -->
+<section id="why" class="fade-in">
+    <h3 class="en">Why Choose Us</h3>
+    <h3 class="he" style="display:none;">למה לבחור ב‑RTM</h3>
+
+    <div class="services-grid">
+
+        <div class="service-box fade-in">
+            <h4 class="en">Proven Expertise</h4>
+            <h4 class="he" style="display:none;">מומחיות מוכחת</h4>
+
+            <p class="en">Years of hands‑on experience in construction and engineering contract management.</p>
+            <p class="he" style="display:none;">שנות ניסיון מעשי בניהול חוזים ותביעות בפרויקטי בנייה והנדסה.</p>
+        </div>
+
+        <div class="service-box fade-in">
+            <h4 class="en">Evidence‑Based Approach</h4>
+            <h4 class="he" style="display:none;">גישה מבוססת נתונים</h4>
+
+            <p class="en">Structured documentation and analytical methods ensure clarity and accuracy.</p>
+            <p class="he" style="display:none;">תיעוד סדור ושיטות ניתוח מקצועיות מבטיחים בהירות ודיוק.</p>
+        </div>
+
+        <div class="service-box fade-in">
+            <h4 class="en">Strategic Insight</h4>
+            <h4 class="he" style="display:none;">תובנות אסטרטגיות</h4>
+
+            <p class="en">We combine technical knowledge with strategic thinking to protect your interests.</p>
+            <p class="he" style="display:none;">אנו משלבים ידע טכני עם חשיבה אסטרטגית להגנה על האינטרסים שלך.</p>
+        </div>
+
+        <div class="service-box fade-in">
+            <h4 class="en">Client‑Focused Delivery</h4>
+            <h4 class="he" style="display:none;">מיקוד בלקוח</h4>
+
+            <p class="en">Clear communication, transparency, and tailored solutions for every project.</p>
+            <p class="he" style="display:none;">תקשורת ברורה, שקיפות ופתרונות מותאמים לכל פרויקט.</p>
+        </div>
+
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
     <h3 class="en">Contact</h3>
+    <h3 class="he" style="display:none;">צור קשר</h3>
 
     <div class="contact-box">
         <p><strong>Phone:</strong> +972-508387004</p>
@@ -295,6 +382,9 @@
 <a class="whatsapp-float" href="https://wa.me/972508387004" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
+
+<!-- Back to Top Button -->
+<div id="backToTop" onclick="scrollToTop()">↑</div>
 
 <!-- Premium Footer -->
 <footer>
@@ -315,6 +405,7 @@
             <h4>Navigation</h4>
             <a href="#about">About</a><br>
             <a href="#services">Services</a><br>
+            <a href="#why">Why Us</a><br>
             <a href="#contact">Contact</a>
         </div>
     </div>
@@ -331,6 +422,20 @@ function switchLang() {
     en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
     he.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
     document.body.style.direction = document.body.style.direction === 'rtl' ? 'ltr' : 'rtl';
+}
+
+// Back to Top Button Logic
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 400) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
