@@ -7,12 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        /* PREMIUM BACKGROUND — Teal Gradient Mesh */
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
@@ -25,11 +21,9 @@
             overflow-x: hidden;
         }
 
-        /* Fade-in animation */
         .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1.2s ease forwards; }
         @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-        /* Header */
         header {
             background: #062A2E;
             color: white;
@@ -42,29 +36,21 @@
             z-index: 20;
         }
 
-        /* Logo with frosted background (Option B) */
+        /* OPTION C — Glow only */
         header img {
             height: 55px;
             width: auto;
             object-fit: contain;
-            background: rgba(255,255,255,0.18);
-            padding: 6px 14px;
-            border-radius: 10px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 0 10px rgba(0,0,0,0.45);
+            filter: brightness(1.4) drop-shadow(0 0 8px rgba(255,255,255,0.9));
         }
 
         @media (max-width: 600px) {
-            header img {
-                height: 45px;
-                padding: 4px 10px;
-            }
+            header img { height: 45px; }
         }
 
         nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
         .lang-switch { margin-left: 20px; cursor: pointer; font-weight: 600; }
 
-        /* HERO + subtle animation */
         .hero {
             padding: 160px 40px;
             text-align: center;
@@ -78,14 +64,8 @@
             background-attachment: fixed;
         }
 
-        @keyframes heroFade {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes heroFade { to { opacity: 1; transform: translateY(0); } }
 
-        /* NEW — RTM Title */
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 64px;
@@ -111,7 +91,6 @@
             margin-top: 20px;
         }
 
-        /* Sections */
         section {
             background: #0E3A40;
             padding: 80px 40px;
@@ -140,7 +119,6 @@
             background: #1BAFBF;
         }
 
-        /* Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -154,7 +132,6 @@
             color: #EAF6F7;
         }
 
-        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -173,12 +150,8 @@
 
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
-        }
+        .whatsapp-float img { width: 35px; height: 35px; }
 
-        /* Back to Top Button */
         #backToTop {
             position: fixed;
             bottom: 100px;
@@ -200,16 +173,9 @@
             transition: 0.3s ease;
         }
 
-        #backToTop.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        #backToTop.show { opacity: 1; visibility: visible; }
+        #backToTop:hover { transform: scale(1.1); }
 
-        #backToTop:hover {
-            transform: scale(1.1);
-        }
-
-        /* Premium Footer */
         footer {
             background: #062A2E;
             color: #EAF6F7;
@@ -267,7 +233,7 @@
 
 <section class="hero">
 
-    <!-- NEW RTM TITLE -->
+    <!-- RTM Title -->
     <h1 class="en">RTM</h1>
     <h1 class="he" style="display:none;">RTM</h1>
 
@@ -281,7 +247,6 @@
     <a href="#contact" class="btn he" style="display:none;">צור קשר</a>
 </section>
 
-<!-- ABOUT SECTION -->
 <section id="about" class="fade-in">
     <h3 class="en">About RTM</h3>
     <h3 class="he" style="display:none;">אודות RTM</h3>
@@ -319,7 +284,6 @@
     </p>
 </section>
 
-<!-- SERVICES SECTION -->
 <section id="services" class="fade-in">
     <h3 class="en">Our Services</h3>
     <h3 class="he" style="display:none;">השירותים שלנו</h3>
@@ -361,7 +325,6 @@
     </div>
 </section>
 
-<!-- WHY CHOOSE US SECTION -->
 <section id="why" class="fade-in">
     <h3 class="en">Why Choose Us</h3>
     <h3 class="he" style="display:none;">למה לבחור ב‑RTM</h3>
@@ -403,7 +366,6 @@
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="fade-in">
     <h3 class="en">Contact</h3>
     <h3 class="he" style="display:none;">צור קשר</h3>
@@ -415,15 +377,12 @@
     </div>
 </section>
 
-<!-- Floating WhatsApp Button -->
 <a class="whatsapp-float" href="https://wa.me/972508387004" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
-<!-- Back to Top Button -->
 <div id="backToTop" onclick="scrollToTop()">↑</div>
 
-<!-- Premium Footer -->
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
@@ -455,4 +414,22 @@
 <script>
 function switchLang() {
     const en = document.querySelectorAll('.en');
-    const he = document
+    const he = document.querySelectorAll('.he');
+    en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+    he.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+    document.body.style.direction = document.body.style.direction === 'rtl' ? 'ltr' : 'rtl';
+}
+
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 400) btn.classList.add('show');
+    else btn.classList.remove('show');
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
