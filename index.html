@@ -213,4 +213,33 @@
         <p class="he" style="display:none;"><strong>טלפון:</strong> ‎+972-508387004</p>
 
         <p class="en"><strong>Email:</strong> rtm.contractmanagement@gmail.com</p>
-        <p class="he" style="display:none;"><strong>אימייל:</strong> rtm.contractmanagement
+        <p class="he" style="display:none;"><strong>אימייל:</strong> rtm.contractmanagement@gmail.com</p>
+
+        <p class="en"><strong>Location:</strong> Tel Aviv, Israel</p>
+        <p class="he" style="display:none;"><strong>מיקום:</strong> תל אביב, ישראל</p>
+    </div>
+</section>
+
+<footer>
+    <div style="max-width: 1000px; margin: auto; padding: 20px;">
+        <p style="margin: 0; font-size: 14px; opacity: 0.8;">
+            © 2026 RTM – Contract & Claim Management • Tel Aviv, Israel
+        </p>
+    </div>
+</footer>
+
+<script>
+function switchLang() {
+    const en = document.querySelectorAll('.en');
+    const he = document.querySelectorAll('.he');
+
+    en.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+    he.forEach(el => el.style.display = (el.style.display === 'none' ? 'block' : 'none'));
+
+    document.body.style.direction =
+        document.body.style.direction === 'rtl' ? 'ltr' : 'rtl';
+}
+</script>
+
+</body>
+</html>
